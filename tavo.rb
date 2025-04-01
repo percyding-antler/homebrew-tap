@@ -7,7 +7,7 @@ class Tavo < Formula
   sha256 "8f04b682838e8b2ae5bfc93ae43818c080fc583cd587f0c3b5a67f2328c47215"
   license "MIT"
 
-  depends_on "python@3.11"
+  depends_on "python@3.13"
   depends_on "opa"
 
   def install
@@ -17,7 +17,7 @@ class Tavo < Formula
     # Create a wrapper script that sets up the environment properly
     (bin/"tavo-server").write <<~EOS
       #!/bin/bash
-      exec "#{Formula["python@3.11"].opt_bin}/python3" "#{prefix}/libexec/server.py" "$@"
+      exec /usr/bin/env python3 "#{prefix}/libexec/server.py" "$@"
     EOS
     
     # Move the Python files to libexec
