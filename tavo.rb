@@ -13,18 +13,21 @@ class Tavo < Formula
   def install
     # Install using virtualenv
     virtualenv_install_with_resources
+
+    # Create a wrapper script that sets up the environment properly
+    (bin/"tavo-server").write <<~EOS
+      #!/bin/bash
+      exec "#{Formula["python@3.11"].opt_bin}/python3" "#{prefix}/libexec/server.py" "$@"
+    EOS
     
-    # Ensure the main python files are in the right location
-    bin.install "server.py"
-    bin.install "policy_store.py"
-    bin.install "prebuilt_policies.json" if File.exist?("prebuilt_policies.json")
-    bin.install "db.json" if File.exist?("db.json")
+    # Move the Python files to libexec
+    libexec.install "server.py"
+    libexec.install "policy_store.py"
+    libexec.install "prebuilt_policies.json" if File.exist?("prebuilt_policies.json")
+    libexec.install "db.json" if File.exist?("db.json")
     
-    # Create a directory structure that matches what the script expects
-    (libexec/"sdk").mkpath
-    # Create symlinks in the sdk directory to the actual files
-    ln_sf bin/"server.py", libexec/"sdk/server.py"
-    ln_sf bin/"policy_store.py", libexec/"sdk/policy_store.py"
+    # Make the wrapper script executable
+    chmod 0755, bin/"tavo-server"
   end
 
   test do
