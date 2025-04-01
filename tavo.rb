@@ -4,7 +4,7 @@ class Tavo < Formula
   desc "Tavo CLI - Policy server management tool"
   homepage "https://github.com/percyding-antler/ovat-cli"
   url "https://github.com/percyding-antler/ovat-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "808edc6503d84335035b55e0870a9e4ea1d938a1066de75940966311e186780a"
+  sha256 "8f04b682838e8b2ae5bfc93ae43818c080fc583cd587f0c3b5a67f2328c47215"
   license "MIT"
 
   depends_on "python@3.11"
