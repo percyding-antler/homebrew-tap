@@ -36,8 +36,8 @@ class Tavo < Formula
   end
 
   resource "opa-python-client" do
-    url "https://pypi.org/packages/source/o/opa-python-client/opa-python-client-2.0.2.tar.gz"
-    sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    url "https://files.pythonhosted.org/packages/c1/6c/22cc509869e1feb1b292bb9e8a3ab738018bfab34abf117c0214db165353/opa_python_client-2.0.2.tar.gz"
+    sha256 "e7582cc1d370941c33b22a34307bd5946341f96318f4563dd81a11ef087ec5bb"
   end
 
   resource "requests" do
