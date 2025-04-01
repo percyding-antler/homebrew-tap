@@ -12,7 +12,7 @@ class Tavo < Formula
 
   resource "aiodns" do
     url "https://pypi.org/packages/source/a/aiodns/aiodns-3.2.0.tar.gz"
-    sha256 "371bbb6bbe20bfcfb0240a2059d6d39c787c41bf6b371a505b4f4d8578b9cde6"
+    sha256 "62869b23409349c21b072883ec8998316b234c9a9e36675756e8e317e8768f72"
   end
 
   resource "aiofiles" do
