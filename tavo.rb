@@ -30,6 +30,11 @@ class Tavo < Formula
     sha256 "8ce789231404ca8fff7f693cdce398abf6d90fd5dae2b1847477196c243b1fbb"
   end
 
+  resource "werkzeug" do
+    url "https://pypi.org/packages/source/w/werkzeug/werkzeug-3.0.1.tar.gz"
+    sha256 "507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc"
+  end
+
   resource "flask" do
     url "https://pypi.org/packages/source/f/flask/flask-3.1.0.tar.gz"
     sha256 "5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac"
