@@ -22,12 +22,12 @@ class Tavo < Formula
 
   resource "aiohappyeyeballs" do
     url "https://pypi.org/packages/source/a/aiohappyeyeballs/aiohappyeyeballs-2.5.0.tar.gz"
-    sha256 "5e21ca6fa34810ee5d14c2c38f360efc5542a730e97c7c9a2a2edeb91fb15a69"
+    sha256 "18fde6204a76deeabc97c48bdd01d5801cfda5d6b9c8bbeb1aaaee9d648ca191"
   end
 
   resource "aiohttp" do
     url "https://pypi.org/packages/source/a/aiohttp/aiohttp-3.11.13.tar.gz"
-    sha256 "fe5fe222bec9b90458493960d8c904f4a231e812f3b4b7b51cc17b80020fbce5"
+    sha256 "8ce789231404ca8fff7f693cdce398abf6d90fd5dae2b1847477196c243b1fbb"
   end
 
   resource "flask" do
@@ -37,7 +37,7 @@ class Tavo < Formula
 
   resource "opa-python-client" do
     url "https://pypi.org/packages/source/o/opa-python-client/opa-python-client-2.0.2.tar.gz"
-    sha256 "d8b88c2dcef5a29fe1ce6cbcb66b0fad84d67b24d60dfd03bea5a93fe20c0cf0"
+    sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   end
 
   resource "requests" do
@@ -47,7 +47,7 @@ class Tavo < Formula
 
   resource "pymongo" do
     url "https://pypi.org/packages/source/p/pymongo/pymongo-4.7.2.tar.gz"
-    sha256 "401dc447afbd52e98ca494493ea3c5437a9ef85f416b4608007abd3d5fdcbbb0"
+    sha256 "9024e1661c6e40acf468177bf90ce924d1bc681d2b244adda3ed7b2f4c4d17d7"
   end
 
   def install
