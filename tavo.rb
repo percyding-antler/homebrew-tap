@@ -7,7 +7,7 @@ class Tavo < Formula
   sha256 "808edc6503d84335035b55e0870a9e4ea1d938a1066de75940966311e186780a"
   license "MIT"
 
-  depends_on "python@3.8"
+  depends_on "python@3.11"
   depends_on "opa"
 
   def install
