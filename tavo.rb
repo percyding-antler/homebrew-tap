@@ -17,7 +17,7 @@ class Tavo < Formula
 
   resource "aiofiles" do
     url "https://pypi.org/packages/source/a/aiofiles/aiofiles-24.1.0.tar.gz"
-    sha256 "5b3675c3746906f78881f8d399f9f196b2d022916c843fe9cf178dc41ce43682"
+    sha256 "22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c"
   end
 
   resource "aiohappyeyeballs" do
@@ -32,7 +32,7 @@ class Tavo < Formula
 
   resource "flask" do
     url "https://pypi.org/packages/source/f/flask/flask-3.1.0.tar.gz"
-    sha256 "ede54265fc0f3c0fe920ccad0c351cb9c853f6250b8ab886aa9c846f7305e6bb"
+    sha256 "5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac"
   end
 
   resource "opa-python-client" do
