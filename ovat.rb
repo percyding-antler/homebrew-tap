@@ -9,20 +9,14 @@ class Ovat < Formula
 
   depends_on "python@3"
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/77/88/b0cc5fe062240edf03093a8218e1ce7f7d7a5b21f7524604c2e64e4da9ca/click-8.1.8.tar.gz"
-    sha256 "c7591d93d063ab1a3f8931d43aea83f56fb4fb3a63afa50a5eed79af5dbf4cc2"
-  end
-
-  resource "flask" do
-    url "https://files.pythonhosted.org/packages/99/9f/34db19ac62ead785eb64e81d8be66aa6aa97e3c9941cc4f0996fbe6e2bf4/flask-3.1.0.tar.gz"
-    sha256 "2ef43e8557c16d84bc94f07387b3a0b3c2bd09897b16f4ec1b99abe2a2cd7603"
-  end
-
-  # Add other dependencies here based on your requirements.txt
+  # Python dependencies
+  depends_on "pip" => :build
 
   def install
-    virtualenv_install_with_resources
+    virtualenv_create(libexec, "python3")
+    system libexec/"bin/pip", "install", "-v", "--no-binary", ":all:",
+                              "--ignore-installed", buildpath
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
