@@ -3,8 +3,8 @@ class Ovat < Formula
 
   desc "OVAT - Open Policy Agent Verification and Testing CLI tool"
   homepage "https://github.com/percyding-antler/ovat-cli"
-  url "https://github.com/percyding-antler/ovat-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "bdaafdfa8e4834128f124702ad96de4e0fcacec716b6cd4fc7149cb7d07458d4"
+  url "https://github.com/percyding-antler/ovat-cli/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "95521d1d681a76c4d5dc5c4755afc6e7e7c70ebf736114902bc322256f97a4ab"
   license "MIT"
 
   depends_on "python@3.12"
@@ -157,19 +157,6 @@ class Ovat < Formula
   def install
     # Use the simplified installation method from the docs
     virtualenv_install_with_resources
-    
-    # Ensure prebuilt_policies.json is available
-    # First, find it in the source tarball
-    prebuilt_policy_file = buildpath/"src/prebuilt_policies.json"
-    if prebuilt_policy_file.exist?
-      # Copy to both potential locations where the app might look for it
-      # 1. In the package directory
-      (libexec/"lib/python3.12/site-packages/src").install prebuilt_policy_file
-      # 2. In the current directory when running the command (bin directory)
-      (bin).install prebuilt_policy_file
-    else
-      opoo "Could not find prebuilt_policies.json in the source"
-    end
   end
 
   test do
