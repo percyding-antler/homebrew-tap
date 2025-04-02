@@ -7,13 +7,13 @@ class Ovat < Formula
   sha256 "bdaafdfa8e4834128f124702ad96de4e0fcacec716b6cd4fc7149cb7d07458d4"
   license "MIT"
 
-  depends_on "python@3"
+  depends_on "python@3.12"
 
   def install
-    virtualenv_create(libexec, "python3")
-    system libexec/"bin/pip", "install", "-v", "--no-binary", ":all:",
-                              "--ignore-installed", buildpath
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    python_executable = Formula["python@3.12"].opt_bin/"python3.12"
+    venv = virtualenv_create(libexec, python_executable)
+    venv.pip_install resources
+    venv.pip_install_and_link buildpath
   end
 
   test do
