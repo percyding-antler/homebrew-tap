@@ -157,6 +157,19 @@ class Ovat < Formula
   def install
     # Use the simplified installation method from the docs
     virtualenv_install_with_resources
+    
+    # Ensure prebuilt_policies.json is available
+    # First, find it in the source tarball
+    prebuilt_policy_file = buildpath/"src/prebuilt_policies.json"
+    if prebuilt_policy_file.exist?
+      # Copy to both potential locations where the app might look for it
+      # 1. In the package directory
+      (libexec/"lib/python3.12/site-packages/src").install prebuilt_policy_file
+      # 2. In the current directory when running the command (bin directory)
+      (bin).install prebuilt_policy_file
+    else
+      opoo "Could not find prebuilt_policies.json in the source"
+    end
   end
 
   test do
