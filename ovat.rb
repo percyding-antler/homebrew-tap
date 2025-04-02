@@ -9,9 +9,6 @@ class Ovat < Formula
 
   depends_on "python@3"
 
-  # Python dependencies
-  depends_on "pip" => :build
-
   def install
     virtualenv_create(libexec, "python3")
     system libexec/"bin/pip", "install", "-v", "--no-binary", ":all:",
