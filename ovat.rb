@@ -12,8 +12,9 @@ class Ovat < Formula
   def install
     python_executable = Formula["python@3.12"].opt_bin/"python3.12"
     venv = virtualenv_create(libexec, python_executable)
-    venv.pip_install resources
     venv.pip_install_and_link buildpath
+
+    bin.install_symlink libexec/"bin/ovat"
   end
 
   test do
